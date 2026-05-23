@@ -11,8 +11,14 @@
     <h1>ToDoリスト</h1>
 
     <div class="input-area">
-      <input type="text" id="todo-input" placeholder="タスクを入力してください">
-      <button id="add-btn">追加</button>
+      <div class="input-row">
+        <input type="text" id="todo-input" placeholder="タスクを入力してください">
+        <button id="add-btn">追加</button>
+      </div>
+      <div class="date-row">
+        <label for="deadline-input">締切日：</label>
+        <input type="date" id="deadline-input">
+      </div>
     </div>
 
     <ul id="todo-list"></ul>
