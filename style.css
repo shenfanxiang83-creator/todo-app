@@ -5,35 +5,58 @@
 }
 
 body {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  background: #f0f2f5;
+  font-family: 'Noto Sans JP', sans-serif;
+  background: #f0ebe0;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 24px;
 }
 
 .container {
-  background: white;
-  border-radius: 12px;
-  padding: 32px;
+  background: #faf7f2;
+  border-radius: 4px;
+  padding: 40px 36px;
   width: 100%;
-  max-width: 480px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  box-shadow: 0 2px 16px rgba(80, 60, 30, 0.1);
+  border-top: 3px solid #7a6a52;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.title-deco {
+  color: #b5a48a;
+  font-size: 14px;
+  letter-spacing: 2px;
 }
 
 h1 {
-  font-size: 24px;
-  color: #1a1a2e;
-  margin-bottom: 24px;
-  text-align: center;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #3d3025;
+  letter-spacing: 4px;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #e0d8cc;
+  margin: 20px 0;
 }
 
 .input-area {
-  margin-bottom: 24px;
+  margin-bottom: 8px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .input-row {
@@ -49,52 +72,65 @@ h1 {
 
 .date-row label {
   font-size: 13px;
-  color: #666;
+  color: #8a7a65;
   white-space: nowrap;
+  letter-spacing: 1px;
 }
 
 #todo-input {
   flex: 1;
   padding: 10px 14px;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  font-size: 15px;
+  border: 1px solid #d4c9b8;
+  border-radius: 2px;
+  font-size: 14px;
+  font-family: 'Noto Sans JP', sans-serif;
+  background: #fff;
+  color: #3d3025;
   outline: none;
   transition: border-color 0.2s;
 }
 
 #todo-input:focus {
-  border-color: #4f8ef7;
+  border-color: #7a6a52;
+}
+
+#todo-input::placeholder {
+  color: #c0b4a0;
 }
 
 #deadline-input {
   flex: 1;
   padding: 8px 12px;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
+  border: 1px solid #d4c9b8;
+  border-radius: 2px;
   font-size: 13px;
+  font-family: 'Noto Sans JP', sans-serif;
+  background: #fff;
+  color: #3d3025;
   outline: none;
-  color: #333;
   transition: border-color 0.2s;
 }
 
 #deadline-input:focus {
-  border-color: #4f8ef7;
+  border-color: #7a6a52;
 }
 
 #add-btn {
   padding: 10px 20px;
-  background: #4f8ef7;
-  color: white;
+  background: #7a6a52;
+  color: #faf7f2;
   border: none;
-  border-radius: 8px;
-  font-size: 15px;
+  border-radius: 2px;
+  font-size: 14px;
+  font-family: 'Noto Sans JP', sans-serif;
+  letter-spacing: 2px;
   cursor: pointer;
   transition: background 0.2s;
+  white-space: nowrap;
 }
 
 #add-btn:hover {
-  background: #3a7ae0;
+  background: #5c4f3a;
 }
 
 #todo-list {
@@ -104,16 +140,23 @@ h1 {
 #todo-list li {
   display: flex;
   align-items: center;
-  padding: 12px 14px;
-  border-radius: 8px;
-  margin-bottom: 8px;
-  background: #f8f9fa;
+  padding: 12px 8px;
+  border-bottom: 1px solid #ece5d8;
   gap: 12px;
+  transition: background 0.15s;
 }
 
-#todo-list li.done span.todo-text {
+#todo-list li:last-child {
+  border-bottom: none;
+}
+
+#todo-list li:hover {
+  background: #f5f0e8;
+}
+
+#todo-list li.done .todo-text {
   text-decoration: line-through;
-  color: #aaa;
+  color: #b5a48a;
 }
 
 #todo-list li.done .deadline-badge {
@@ -121,15 +164,15 @@ h1 {
 }
 
 #todo-list li.overdue {
-  background: #fff5f5;
-  border-left: 3px solid #e74c3c;
+  border-left: 2px solid #c0392b;
+  padding-left: 6px;
 }
 
 #todo-list li input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   cursor: pointer;
-  accent-color: #4f8ef7;
+  accent-color: #7a6a52;
   flex-shrink: 0;
 }
 
@@ -137,51 +180,56 @@ h1 {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 4px;
   min-width: 0;
 }
 
 span.todo-text {
-  font-size: 15px;
-  color: #333;
+  font-size: 14px;
+  color: #3d3025;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
 }
 
 .deadline-badge {
   font-size: 11px;
-  color: #888;
+  color: #8a7a65;
   display: flex;
   align-items: center;
   gap: 3px;
 }
 
 .deadline-badge.overdue {
-  color: #e74c3c;
-  font-weight: 600;
+  color: #c0392b;
+  font-weight: 500;
 }
 
 .deadline-badge.today {
-  color: #f39c12;
-  font-weight: 600;
+  color: #b5610a;
+  font-weight: 500;
 }
 
 #todo-list li button {
   background: none;
   border: none;
-  color: #ccc;
-  font-size: 18px;
+  color: #c8bdb0;
+  font-size: 16px;
   cursor: pointer;
   transition: color 0.2s;
   line-height: 1;
   flex-shrink: 0;
+  padding: 2px 4px;
 }
 
 #todo-list li button:hover {
-  color: #e74c3c;
+  color: #c0392b;
 }
 
 #empty-message {
   text-align: center;
-  color: #bbb;
-  font-size: 14px;
-  margin-top: 16px;
+  color: #b5a48a;
+  font-size: 13px;
+  letter-spacing: 2px;
+  padding: 16px 0;
+  font-family: 'Noto Serif JP', serif;
 }

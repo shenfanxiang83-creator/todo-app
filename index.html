@@ -3,12 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ToDoリスト</title>
+  <title>やることリスト</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h1>ToDoリスト</h1>
+    <header>
+      <div class="title-deco">—</div>
+      <h1>やることリスト</h1>
+      <div class="title-deco">—</div>
+    </header>
 
     <div class="input-area">
       <div class="input-row">
@@ -20,6 +27,8 @@
         <input type="date" id="deadline-input">
       </div>
     </div>
+
+    <div class="divider"></div>
 
     <ul id="todo-list"></ul>
 
